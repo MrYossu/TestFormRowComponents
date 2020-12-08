@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFormRowComponents", "TestFormRowComponents\TestFormRowComponents.csproj", "{ADB29883-F757-40FE-9CA7-F8F5B85CE025}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADB29883-F757-40FE-9CA7-F8F5B85CE025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB29883-F757-40FE-9CA7-F8F5B85CE025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB29883-F757-40FE-9CA7-F8F5B85CE025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB29883-F757-40FE-9CA7-F8F5B85CE025}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BC05CEB-8A8A-4534-85BC-DF681FF9E1A5}
+	EndGlobalSection
+EndGlobal

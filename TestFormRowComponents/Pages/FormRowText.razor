@@ -1,0 +1,33 @@
+﻿<div class="form-group row">
+  <label for="@PropertyName" class="col-lg-2 col-form-label">@(Caption ?? PropertyName)</label>
+  <div class="col-lg-10 input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <i class="far fa-@Icon"></i>
+      </span>
+    </div>
+    <input class="form-control" Value="@Value" type="text" id="@PropertyName" name="@PropertyName" @onchange="@OnChanged" />
+  </div>
+</div>
+
+@code {
+
+  [Parameter]
+  public string PropertyName { get; set; }
+
+  [Parameter]
+  public string Value { get; set; }
+
+  [Parameter]
+  public EventCallback<string> ValueChanged { get; set; }
+
+  [Parameter]
+  public string Caption { get; set; }
+
+  [Parameter]
+  public string Icon { get; set; }
+
+  private async Task OnChanged(ChangeEventArgs cea) =>
+    await ValueChanged.InvokeAsync(cea.Value?.ToString() ?? "");
+
+}
