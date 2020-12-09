@@ -14,8 +14,8 @@
           <ValidationSummary />
         </div>
       </div>
-      <FormRowText PropertyName="@nameof(Customer.Name)" @bind-Value="_customer.Name" Caption="Name" Icon="user" />
-      <FormRowText PropertyName="@nameof(Customer.Email)" @bind-Value="_customer.Email" Icon="at" />
+      <FormRowText PropertyName="@nameof(Customer.Name)" @bind-Value="_customer.Name" Caption="Name" Icon="user" />  <ValidationMessage For="() => _customer.Name" />
+      <FormRowTextVal PropertyName="@nameof(Customer.Email)" @bind-Value="_customer.Email" Icon="at" />
       <FormRowDropdownEnum PropertyName="@nameof(Customer.Frequency)" T="Frequency" @bind-Value="_customer.Frequency" Icon="wave-sine" />
       <div class="text-right">
         <input type="submit" class="btn btn-primary" value="Save" />
