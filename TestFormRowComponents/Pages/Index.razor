@@ -6,7 +6,7 @@
 
 <div class="section">
   <div class="container mb-70 mt-4">
-    <EditForm Model="@_customer" OnSubmit="@OnSubmit" class="k-form">
+    <EditForm Model="@_customer" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" class="k-form">
       <DataAnnotationsValidator />
       <div class="form-group row">
         <div class="col-lg-1"></div>
@@ -34,7 +34,10 @@
 
   private string _msg = "";
 
-  private void OnSubmit() =>
+  private void OnValidSubmit() =>
     _msg = $"Customer name: {_customer.Name}, email: {_customer.Email}, frequency: {_customer.Frequency}";
+
+  private void OnInvalidSubmit() =>
+    _msg = "";
 
 }
