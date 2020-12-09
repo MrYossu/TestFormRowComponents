@@ -6,7 +6,7 @@
 
 <div class="section">
   <div class="container mb-70 mt-4">
-    <EditForm Model="@_customer" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" class="k-form">
+    <EditForm EditContext="@EditContext" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" class="k-form">
       <DataAnnotationsValidator />
       <div class="form-group row">
         <div class="col-lg-1"></div>
@@ -15,7 +15,7 @@
         </div>
       </div>
       <FormRowText PropertyName="@nameof(Customer.Name)" @bind-Value="_customer.Name" Caption="Name" Icon="user" />  <ValidationMessage For="() => _customer.Name" />
-      <FormRowTextVal PropertyName="@nameof(Customer.Email)" @bind-Value="_customer.Email" Icon="at" />
+      <FormRowTextVal Model="@((Customer)EditContext.Model)" PropertyName="@nameof(Customer.Email)" @bind-Value="_customer.Email" Icon="at" />
       <FormRowDropdownEnum PropertyName="@nameof(Customer.Frequency)" T="Frequency" @bind-Value="_customer.Frequency" Icon="wave-sine" />
       <div class="text-right">
         <input type="submit" class="btn btn-primary" value="Save" />
@@ -26,6 +26,13 @@
 
 @code {
 
+  private EditContext EditContext;
+
+  protected override void OnInitialized() {
+    EditContext = new EditContext(_customer);
+    base.OnInitialized();
+  }
+  
   readonly Customer _customer = new Customer {
     Name = "Jim",
     Email = "jim@spriggs.org",
