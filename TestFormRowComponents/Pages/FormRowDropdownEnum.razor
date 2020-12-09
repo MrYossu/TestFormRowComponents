@@ -8,9 +8,9 @@
         <i class="far fa-@Icon"></i>
       </span>
     </div>
-    <select class="form-control" name="@PropertyName" id="@PropertyName" value="@Value" @onchange="OnValueChanged">
+    <select class="form-control" name="@PropertyName" id="@PropertyName" @onchange="@OnChanged">
       @foreach (T v in Enum.GetValues(typeof(T)).Cast<T>()) {
-        if ((int)Enum.Parse(typeof(T), v.ToString()) == Value) {
+        if ((int)Enum.Parse(typeof(T), v.ToString()) == (int)(object)_value) {
           <option value="@Convert.ToInt32(v)" selected>@Enum.GetName(typeof(T), v)</option>
         } else {
           <option value="@Convert.ToInt32(v)">@Enum.GetName(typeof(T), v)</option>
